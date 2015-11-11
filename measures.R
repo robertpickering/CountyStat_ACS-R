@@ -17,7 +17,6 @@ measures <- c("B25003",
               "B25077",
               "B25111",
               "B08136",
-              "B08136",
               "B17001",
               "B19013",
               "B23025")  #add other measures as necessary

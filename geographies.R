@@ -19,5 +19,18 @@ Texas = geo.make(state = "TX", county = c("Collin County", "Fort Bend"))
 Virginia = geo.make(state = "VA", county = c("Arlington County", "Fairfax County", "Loudoun County", "Prince William County"))
 Wisconsin = geo.make(state = "WI", county = "Waukesha")
 
-allstates = California+Colorado+DC+Illinois+Indiana+Kansas+Maryland+Michigan+Minnesota+New_Jersey+New_York+Pennsylvania+Texas+Virginia+Wisconsin
-
+allstates = #California+
+  #Colorado+
+  #DC+
+  #Illinois+
+  #Indiana+
+  #Kansas+
+  #Michigan+
+  #Minnesota+
+  #New_Jersey+
+  #New_York+
+  #Pennsylvania+
+  #Texas+
+  #Virginia+
+  #Wisconsin+
+  Maryland

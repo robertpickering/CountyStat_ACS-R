@@ -4,5 +4,10 @@
 #Just follow the prompts as necessary.
 install.packages("acs")
 
+#Install the data.table package for later use with shaping data.
+install.packages("data.table")
+
+install.packages("plyr") #run this if you don't have the package already
+
 #Enter your Census API Key by replacing the elipses
 api.key.install(key="...")
