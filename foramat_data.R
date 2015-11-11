@@ -1,5 +1,3 @@
-library(data.table)
-library(plyr)
 source("getdata.R", local = TRUE)
 
 #Uncomment the measures for which you want to format data

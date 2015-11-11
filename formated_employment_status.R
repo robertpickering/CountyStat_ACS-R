@@ -18,7 +18,8 @@ headers <- colnames(employmentstatus2011)
 headers[1] <- "Measures"
 colnames(employmentstatus2011) <-headers
 employmentstatus2011$year<-"2011"
-employmentstatus2011<-employmentstatus2011[c(8,1,2,3,4,5,6,7)]
+lengthofcolumns <-length(colnames(employmentstatus2011))
+employmentstatus2011<-employmentstatus2011[c(lengthofcolumns,1:lengthofcolumns-1)]
 
 
 write.csv(employmentstatus$`2013`, file = "employmentstatus2013.csv")
@@ -27,7 +28,11 @@ headers <- colnames(employmentstatus2013)
 headers[1] <- "Measures"
 colnames(employmentstatus2013) <-headers
 employmentstatus2013$year<-"2013"
-employmentstatus2013<-employmentstatus2013[c(8,1,2,3,4,5,6,7)]
+lengthofcolumns <-length(colnames(employmentstatus2013))
+employmentstatus2013<-employmentstatus2013[c(lengthofcolumns,1:lengthofcolumns-1)]
+
+#remove intermediate csv files
+file.remove("employmentstatus2011.csv", "employmentstatus2013.csv")
 
 #recombine
 employmentstatus <- list("2011" = employmentstatus2011, "2013" = employmentstatus2013)
