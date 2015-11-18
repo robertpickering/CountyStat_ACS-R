@@ -11,7 +11,7 @@ Finally, the API key is installed.  Edit line 13 by replacing ... with your key.
 ##geographies.R
 This file creates a series of geographic set objects that will be used later when the queries to the API are made.  The geo.make method is used to create a geographic object which, can be combined with other geographic objects to make a single composite geographic object.  The geo.lookup method may be used in the console to find other geogrpahic lacations and names to add to the list of geographies to be made.  As shown in the current script, counties may be concatenated.  Other location types may be concatenated as well such as census tracts.  
 
-Currently, there are 38 counties that are listed.  These are combined into the *allstates* variable.
+Currently, there are 38 counties that are listed.  These are combined into the **allstates** variable.
 
 ##measures.R
 This file contains a vector (R terminology for an array) for the ACS tables that are to be queried later.  Additionally, it contains a vector for the years to be queried.  The current version of the ACS-R package primarily supports the five year American Community Survey from years 2010 to 2013.  There is some limited support for the one and three year surveys but they are not really suitable (stable enough) for the type of bulk data acquisition that these scripts perform.
