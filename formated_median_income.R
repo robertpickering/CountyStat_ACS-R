@@ -64,10 +64,10 @@ file.remove("medianincome2010.csv","medianincome2011.csv", "medianincome2012.csv
 medianincome <- list("2010" = medianincome2010, "2011" = medianincome2011, "2012" = medianincome2012, "2013" = medianincome2013)
 
 #write out data into csv
-write.table(medianincome$`2010`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(medianincome$`2011`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(medianincome$`2012`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(medianincome$`2013`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianincome$`2010`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(medianincome$`2011`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianincome$`2012`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianincome$`2013`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

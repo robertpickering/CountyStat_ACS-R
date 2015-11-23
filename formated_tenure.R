@@ -65,10 +65,10 @@ file.remove("tenure2010.csv","tenure2011.csv", "tenure2012.csv", "tenure2013.csv
 tenure <- list("2010" = tenure2010, "2011" = tenure2011, "2012" = tenure2012, "2013" = tenure2013)
 
 #write out data into csv
-write.table(tenure$`2010`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(tenure$`2011`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(tenure$`2012`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(tenure$`2013`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenure$`2010`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(tenure$`2011`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenure$`2012`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenure$`2013`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

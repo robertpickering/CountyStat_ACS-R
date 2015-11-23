@@ -38,5 +38,5 @@ file.remove("employmentstatus2011.csv", "employmentstatus2013.csv")
 employmentstatus <- list("2011" = employmentstatus2011, "2013" = employmentstatus2013)
 
 #write out data into csv
-write.table(employmentstatus$`2011`, file = "employmentstatus.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(employmentstatus$`2013`, file = "employmentstatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(employmentstatus$`2011`, file = "employmentstatus.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(employmentstatus$`2013`, file = "employmentstatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)

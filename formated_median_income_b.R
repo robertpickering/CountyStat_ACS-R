@@ -40,9 +40,9 @@ medianincom2011b <- list("2011" = medianincom2011b2011, "2013" = medianincom2011
 
 #write out data into csv
 #write.table(medianincom2011b$`2010`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(medianincom2011b$`2011`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(medianincom2011b$`2011`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",")
 #write.table(medianincom2011b$`2012`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(medianincom2011b$`2013`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianincom2011b$`2013`, file = "medianincom2011b.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

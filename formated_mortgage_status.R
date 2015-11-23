@@ -65,10 +65,10 @@ file.remove("mortgagestatus2010.csv","mortgagestatus2011.csv", "mortgagestatus20
 mortgagestatus <- list("2010" = mortgagestatus2010, "2011" = mortgagestatus2011, "2012" = mortgagestatus2012, "2013" = mortgagestatus2013)
 
 #write out data into csv
-write.table(mortgagestatus$`2010`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(mortgagestatus$`2011`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(mortgagestatus$`2012`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(mortgagestatus$`2013`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(mortgagestatus$`2010`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(mortgagestatus$`2011`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(mortgagestatus$`2012`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(mortgagestatus$`2013`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

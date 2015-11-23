@@ -1,10 +1,7 @@
 #Change the working directory to the directory where the scripts are stored>
 
-measurecounter <-1
-
 source("geographies.R", local = TRUE)
 source("measures.R", local = TRUE)
-
 
 
 #2010 Measures Intermediate data

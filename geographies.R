@@ -20,7 +20,7 @@ Virginia = geo.make(state = "VA", county = c("Arlington County", "Fairfax County
 Wisconsin = geo.make(state = "WI", county = "Waukesha")
 
 allstates = 
-  California+
+  #California+
   #Colorado+
   #DC+
   #Illinois+

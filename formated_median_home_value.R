@@ -64,10 +64,10 @@ file.remove("medianhomevalue2010.csv","medianhomevalue2011.csv", "medianhomevalu
 medianhomevalue <- list("2010" = medianhomevalue2010, "2011" = medianhomevalue2011, "2012" = medianhomevalue2012, "2013" = medianhomevalue2013)
 
 #write out data into csv
-write.table(medianhomevalue$`2010`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(medianhomevalue$`2011`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(medianhomevalue$`2012`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(medianhomevalue$`2013`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianhomevalue$`2010`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(medianhomevalue$`2011`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianhomevalue$`2012`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(medianhomevalue$`2013`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

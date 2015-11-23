@@ -65,10 +65,10 @@ file.remove("povertystatus2010.csv","povertystatus2011.csv", "povertystatus2012.
 povertystatus <- list("2010" = povertystatus2010, "2011" = povertystatus2011, "2012" = povertystatus2012, "2013" = povertystatus2013)
 
 #write out data into csv
-write.table(povertystatus$`2010`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(povertystatus$`2011`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(povertystatus$`2012`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(povertystatus$`2013`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(povertystatus$`2010`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(povertystatus$`2011`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(povertystatus$`2012`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(povertystatus$`2013`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

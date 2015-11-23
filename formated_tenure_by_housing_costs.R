@@ -64,10 +64,10 @@ file.remove("tenurebyhousingcosts2010.csv","tenurebyhousingcosts2011.csv", "tenu
 tenurebyhousingcosts <- list("2010" = tenurebyhousingcosts2010, "2011" = tenurebyhousingcosts2011, "2012" = tenurebyhousingcosts2012, "2013" = tenurebyhousingcosts2013)
 
 #write out data into csv
-write.table(tenurebyhousingcosts$`2010`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",")
-write.table(tenurebyhousingcosts$`2011`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(tenurebyhousingcosts$`2012`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
-write.table(tenurebyhousingcosts$`2013`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenurebyhousingcosts$`2010`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",")
+#write.table(tenurebyhousingcosts$`2011`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenurebyhousingcosts$`2012`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+#write.table(tenurebyhousingcosts$`2013`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
 
 
 

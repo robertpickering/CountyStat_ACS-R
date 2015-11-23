@@ -11,13 +11,22 @@
 #median_household_income = "B19013"
 #in_labor_force = "B23025"
 
-measures <- c("B25003",
-              "B25101", 
-              "B25106",
-              "B25077",
-              "B25111",
-              "B08136",
-              "B17001",
-              "B19013",
-              "B23025")  #add other measures as necessary
+measuresa <- c("B25003",
+               "B25101", 
+               "B25106",
+               "B25077",
+               "B25111",
+               "B17001",
+               "B19013")  #add other measures as necessary
+
+measuresb <- c("B25003",
+               "B25101", 
+               "B25106",
+               "B25077",
+               "B25111",
+               "B17001",
+               "B19013",
+               "B08136",
+               "B23025")  #add other measures as necessary
+
 years <- (2010:2013)
