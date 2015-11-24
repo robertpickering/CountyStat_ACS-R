@@ -21,11 +21,20 @@ Currently, there are 38 counties that are listed.  These are combined into the *
 This file contains a vector (R terminology for an array) for the ACS tables that are to be queried later.  Additionally, it contains a vector for the years to be queried.  The current version of the ACS-R package primarily supports the five year American Community Survey from years 2010 to 2013.  There is some limited support for the one and three year surveys but they are not really suitable (stable enough) for the type of bulk data acquisition that these scripts perform.  Other tables can be found using the acs.lookup method.  
 
 ##getdata.R
-This file can be run by itself as it will source the geographies.R file to build the appropriate geographic sets.  This is the file that accesses the Census Data via its API and as such may take quite a while to execute - especially if the geography set is large.
+This file can be run by itself as it will source the geographies.R file to build the appropriate geographic sets.  This is the file that accesses the Census Data via its API and as such may take quite a while to execute - especially if the geography set is large. Some tables, such as B17001 have 59 variables associated with it.  If all of those variables are not required, it is possible to edit what data is fetched to reduce the amount of data retrieved and the amount of time required to perform the query.  For instance this line will retrieve all 59 variables for each geographic location for one year.
+
+    acs.fetch(endyear = years[1], geography = allstates, table.number = "B17001", col.names = "pretty")
+
+
+
+Modifying it slightly by adding the keyword variable reduces the number of variables to 1.
+
+    acs.fetch(endyear = years[1], geography = allstates, table.number = "B17001", col.names = "pretty", keyword = c("75","Male", "below"))
+Using the acs.lookup method on the console is a good way to experiment with creating the best queries.
 
 ----------
 Initially, there was a desire to have the data retrieved in a while loop.  Unfortunately, when an error occurs in the retrieval of data, the loop will terminate and not fetch the rest of the data. In the case of the years 2010 and 2012, data tables B08136 and B23025 don't exist and so they error out.  This caused the other years to not fetch data beyond these errors as well.  Consequently, each table/year combination is fetched individually.  The drawback to this is that the file may grow exceedingly large in the future.  However, it lends itself well to debugging.  The tables are then combined by year into four separate lists and then the intermediate data is dispensed with.
 
 ##format_data.R
- 
+ This file can be run with no modifications once the install.R script has been run successfully.  It sources the getdata.R file which, will pull all the data as described in the previous section.  Once that has successfully acquired the data, a series of files for the individual measures are sourced which, transform the ACS-R data objects into data frames.  If measures other than the ones listed in getdata.R are required, an additional formated_xxx.R file must be created with an appropriate source line added to format_data.R with the corresponding measure added to the list called alldata.  Once the alldata list is populated, a while loop writes the data to the the file alldata.csv.
 
