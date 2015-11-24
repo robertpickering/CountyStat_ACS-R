@@ -27,10 +27,9 @@ This file can be run by itself as it will source the geographies.R file to build
 
 
 
-Modifying it slightly by adding the keyword variable reduces the number of variables to 1.
+Modifying it slightly by adding the keyword variable reduces the number of variables to 1.   `acs.fetch(endyear = years[1], geography = allstates, table.number = "B17001", col.names = "pretty", keyword = c("75","Male", "below"))`
 
-    acs.fetch(endyear = years[1], geography = allstates, table.number = "B17001", col.names = "pretty", keyword = c("75","Male", "below"))
-Using the acs.lookup method on the console is a good way to experiment with creating the best queries.
+Using the acs.lookup method on the console is a good way to experiment with creating the best queries.  
 
 ----------
 Initially, there was a desire to have the data retrieved in a while loop.  Unfortunately, when an error occurs in the retrieval of data, the loop will terminate and not fetch the rest of the data. In the case of the years 2010 and 2012, data tables B08136 and B23025 don't exist and so they error out.  This caused the other years to not fetch data beyond these errors as well.  Consequently, each table/year combination is fetched individually.  The drawback to this is that the file may grow exceedingly large in the future.  However, it lends itself well to debugging.  The tables are then combined by year into four separate lists and then the intermediate data is dispensed with.
