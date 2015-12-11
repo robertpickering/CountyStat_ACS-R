@@ -16,9 +16,17 @@ mortgagestatus2012 = t(data.frame(estimate(benchmarks2012[[2]])))
 
 mortgagestatus2013 = t(data.frame(estimate(benchmarks2013[[2]])))
 
+#dataframes for 2014
+
+mortgagestatus2014 = t(data.frame(estimate(benchmarks2014[[2]])))
+
 
 #combine all into one list
-mortgagestatus <- list("2010" = mortgagestatus2010, "2011" = mortgagestatus2011, "2012" = mortgagestatus2012, "2013" = mortgagestatus2013)
+mortgagestatus <- list("2010" = mortgagestatus2010, 
+                       "2011" = mortgagestatus2011, 
+                       "2012" = mortgagestatus2012, 
+                       "2013" = mortgagestatus2013, 
+                       "2014" = mortgagestatus2014)
 
 # transform data to include years in first columns
 
@@ -58,11 +66,28 @@ mortgagestatus2013$year<-"2013"
 lengthofcolumns <-length(colnames(mortgagestatus2013))
 mortgagestatus2013<-mortgagestatus2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(mortgagestatus$`2014`, file = "mortgagestatus2014.csv")
+mortgagestatus2014 <- data.frame(read.csv("mortgagestatus2014.csv"))
+headers <- colnames(mortgagestatus2014)
+headers[1] <- "Measures"
+colnames(mortgagestatus2014) <-headers
+mortgagestatus2014$year<-"2014"
+lengthofcolumns <-length(colnames(mortgagestatus2014))
+mortgagestatus2014<-mortgagestatus2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("mortgagestatus2010.csv","mortgagestatus2011.csv", "mortgagestatus2012.csv", "mortgagestatus2013.csv")
+file.remove("mortgagestatus2010.csv",
+            "mortgagestatus2011.csv", 
+            "mortgagestatus2012.csv", 
+            "mortgagestatus2013.csv", 
+            "mortgagestatus2014.csv")
 
 #recombine
-mortgagestatus <- list("2010" = mortgagestatus2010, "2011" = mortgagestatus2011, "2012" = mortgagestatus2012, "2013" = mortgagestatus2013)
+mortgagestatus <- list("2010" = mortgagestatus2010, 
+                       "2011" = mortgagestatus2011, 
+                       "2012" = mortgagestatus2012, 
+                       "2013" = mortgagestatus2013, 
+                       "2014" = mortgagestatus2014)
 
 #write out data into csv
 #write.table(mortgagestatus$`2010`, file = "mortgagestatus.csv", append = TRUE, row.names = FALSE, sep = ",")

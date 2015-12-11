@@ -15,9 +15,17 @@ tenurebyhousingcosts2012 = t(data.frame(estimate(benchmarks2012[[3]])))
 
 tenurebyhousingcosts2013 = t(data.frame(estimate(benchmarks2013[[3]])))
 
+#dataframes for 2014
+
+tenurebyhousingcosts2014 = t(data.frame(estimate(benchmarks2014[[3]])))
+
 
 #combine all into one list
-tenurebyhousingcosts <- list("2010" = tenurebyhousingcosts2010, "2011" = tenurebyhousingcosts2011, "2012" = tenurebyhousingcosts2012, "2013" = tenurebyhousingcosts2013)
+tenurebyhousingcosts <- list("2010" = tenurebyhousingcosts2010, 
+                             "2011" = tenurebyhousingcosts2011, 
+                             "2012" = tenurebyhousingcosts2012, 
+                             "2013" = tenurebyhousingcosts2013, 
+                             "2014" = tenurebyhousingcosts2014)
 
 # transform data to include years in first columns
 
@@ -57,11 +65,28 @@ tenurebyhousingcosts2013$year<-"2013"
 lengthofcolumns <-length(colnames(tenurebyhousingcosts2013))
 tenurebyhousingcosts2013<-tenurebyhousingcosts2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(tenurebyhousingcosts$`2014`, file = "tenurebyhousingcosts2014.csv")
+tenurebyhousingcosts2014 <- data.frame(read.csv("tenurebyhousingcosts2014.csv"))
+headers <- colnames(tenurebyhousingcosts2014)
+headers[1] <- "Measures"
+colnames(tenurebyhousingcosts2014) <-headers
+tenurebyhousingcosts2014$year<-"2014"
+lengthofcolumns <-length(colnames(tenurebyhousingcosts2014))
+tenurebyhousingcosts2014<-tenurebyhousingcosts2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("tenurebyhousingcosts2010.csv","tenurebyhousingcosts2011.csv", "tenurebyhousingcosts2012.csv", "tenurebyhousingcosts2013.csv")
+file.remove("tenurebyhousingcosts2010.csv",
+            "tenurebyhousingcosts2011.csv", 
+            "tenurebyhousingcosts2012.csv", 
+            "tenurebyhousingcosts2013.csv", 
+            "tenurebyhousingcosts2014.csv")
 
 #recombine
-tenurebyhousingcosts <- list("2010" = tenurebyhousingcosts2010, "2011" = tenurebyhousingcosts2011, "2012" = tenurebyhousingcosts2012, "2013" = tenurebyhousingcosts2013)
+tenurebyhousingcosts <- list("2010" = tenurebyhousingcosts2010, 
+                             "2011" = tenurebyhousingcosts2011, 
+                             "2012" = tenurebyhousingcosts2012, 
+                             "2013" = tenurebyhousingcosts2013, 
+                             "2014" = tenurebyhousingcosts2014)
 
 #write out data into csv
 #write.table(tenurebyhousingcosts$`2010`, file = "tenurebyhousingcosts.csv", append = TRUE, row.names = FALSE, sep = ",")

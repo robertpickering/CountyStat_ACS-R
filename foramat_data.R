@@ -30,6 +30,7 @@ while(i < (length(alldata)+1)){
      write.table(alldata[[i]]$`2011`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
      write.table(alldata[[i]]$`2012`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
      write.table(alldata[[i]]$`2013`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+     write.table(alldata[[i]]$`2014`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
      
    }
      
@@ -38,6 +39,7 @@ while(i < (length(alldata)+1)){
      write.table(alldata[[i]]$`2011`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
      write.table(alldata[[i]]$`2012`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
      write.table(alldata[[i]]$`2013`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
+     write.table(alldata[[i]]$`2014`, file = "alldata.csv", append = TRUE, row.names = FALSE, sep = ",", col.names = FALSE)
    }
   i = i+1
 }

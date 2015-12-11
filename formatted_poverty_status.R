@@ -16,9 +16,17 @@ povertystatus2012 = t(data.frame(estimate(benchmarks2012[[6]])))
 
 povertystatus2013 = t(data.frame(estimate(benchmarks2013[[7]])))
 
+#dataframes for 2014
+
+povertystatus2014 = t(data.frame(estimate(benchmarks2014[[7]])))
+
 
 #combine all into one list
-povertystatus <- list("2010" = povertystatus2010, "2011" = povertystatus2011, "2012" = povertystatus2012, "2013" = povertystatus2013)
+povertystatus <- list("2010" = povertystatus2010, 
+                      "2011" = povertystatus2011, 
+                      "2012" = povertystatus2012, 
+                      "2013" = povertystatus2013, 
+                      "2014" = povertystatus2014)
 
 # transform data to include years in first columns
 
@@ -58,11 +66,28 @@ povertystatus2013$year<-"2013"
 lengthofcolumns <-length(colnames(povertystatus2013))
 povertystatus2013<-povertystatus2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(povertystatus$`2014`, file = "povertystatus2014.csv")
+povertystatus2014 <- data.frame(read.csv("povertystatus2014.csv"))
+headers <- colnames(povertystatus2014)
+headers[1] <- "Measures"
+colnames(povertystatus2014) <-headers
+povertystatus2014$year<-"2014"
+lengthofcolumns <-length(colnames(povertystatus2014))
+povertystatus2014<-povertystatus2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("povertystatus2010.csv","povertystatus2011.csv", "povertystatus2012.csv", "povertystatus2013.csv")
+file.remove("povertystatus2010.csv",
+            "povertystatus2011.csv", 
+            "povertystatus2012.csv", 
+            "povertystatus2013.csv", 
+            "povertystatus2014.csv")
 
 #recombine
-povertystatus <- list("2010" = povertystatus2010, "2011" = povertystatus2011, "2012" = povertystatus2012, "2013" = povertystatus2013)
+povertystatus <- list("2010" = povertystatus2010, 
+                      "2011" = povertystatus2011, 
+                      "2012" = povertystatus2012, 
+                      "2013" = povertystatus2013, 
+                      "2014" = povertystatus2014)
 
 #write out data into csv
 #write.table(povertystatus$`2010`, file = "povertystatus.csv", append = TRUE, row.names = FALSE, sep = ",")

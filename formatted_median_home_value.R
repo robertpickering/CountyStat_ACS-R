@@ -15,9 +15,17 @@ medianhomevalue2012 = t(data.frame(estimate(benchmarks2012[[4]])))
 
 medianhomevalue2013 = t(data.frame(estimate(benchmarks2013[[4]])))
 
+#dataframes for 2014
+
+medianhomevalue2014 = t(data.frame(estimate(benchmarks2014[[4]])))
+
 
 #combine all into one list
-medianhomevalue <- list("2010" = medianhomevalue2010, "2011" = medianhomevalue2011, "2012" = medianhomevalue2012, "2013" = medianhomevalue2013)
+medianhomevalue <- list("2010" = medianhomevalue2010, 
+                        "2011" = medianhomevalue2011, 
+                        "2012" = medianhomevalue2012, 
+                        "2013" = medianhomevalue2013, 
+                        "2014" = medianhomevalue2014)
 
 # transform data to include years in first columns
 
@@ -57,11 +65,28 @@ medianhomevalue2013$year<-"2013"
 lengthofcolumns <-length(colnames(medianhomevalue2013))
 medianhomevalue2013<-medianhomevalue2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(medianhomevalue$`2014`, file = "medianhomevalue2014.csv")
+medianhomevalue2014 <- data.frame(read.csv("medianhomevalue2014.csv"))
+headers <- colnames(medianhomevalue2014)
+headers[1] <- "Measures"
+colnames(medianhomevalue2014) <-headers
+medianhomevalue2014$year<-"2014"
+lengthofcolumns <-length(colnames(medianhomevalue2014))
+medianhomevalue2014<-medianhomevalue2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("medianhomevalue2010.csv","medianhomevalue2011.csv", "medianhomevalue2012.csv", "medianhomevalue2013.csv")
+file.remove("medianhomevalue2010.csv",
+            "medianhomevalue2011.csv", 
+            "medianhomevalue2012.csv", 
+            "medianhomevalue2013.csv", 
+            "medianhomevalue2014.csv")
 
 #recombine
-medianhomevalue <- list("2010" = medianhomevalue2010, "2011" = medianhomevalue2011, "2012" = medianhomevalue2012, "2013" = medianhomevalue2013)
+medianhomevalue <- list("2010" = medianhomevalue2010, 
+                        "2011" = medianhomevalue2011, 
+                        "2012" = medianhomevalue2012, 
+                        "2013" = medianhomevalue2013, 
+                        "2014" = medianhomevalue2014)
 
 #write out data into csv
 #write.table(medianhomevalue$`2010`, file = "medianhomevalue.csv", append = TRUE, row.names = FALSE, sep = ",")

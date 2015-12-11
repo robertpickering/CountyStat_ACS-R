@@ -16,9 +16,17 @@ tenure2012 = t(data.frame(estimate(benchmarks2012[[1]])))
 
 tenure2013 = t(data.frame(estimate(benchmarks2013[[1]])))
 
+#dataframes for 2014
+
+tenure2014 = t(data.frame(estimate(benchmarks2014[[1]])))
+
 
 #combine all into one list
-tenure <- list("2010" = tenure2010, "2011" = tenure2011, "2012" = tenure2012, "2013" = tenure2013)
+tenure <- list("2010" = tenure2010, 
+               "2011" = tenure2011, 
+               "2012" = tenure2012, 
+               "2013" = tenure2013, 
+               "2014" = tenure2014)
 
 # transform data to include years in first columns
 
@@ -58,11 +66,28 @@ tenure2013$year<-"2013"
 lengthofcolumns <-length(colnames(tenure2013))
 tenure2013<-tenure2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(tenure$`2014`, file = "tenure2014.csv")
+tenure2014 <- data.frame(read.csv("tenure2014.csv"))
+headers <- colnames(tenure2014)
+headers[1] <- "Measures"
+colnames(tenure2014) <-headers
+tenure2014$year<-"2014"
+lengthofcolumns <-length(colnames(tenure2014))
+tenure2014<-tenure2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("tenure2010.csv","tenure2011.csv", "tenure2012.csv", "tenure2013.csv")
+file.remove("tenure2010.csv",
+            "tenure2011.csv", 
+            "tenure2012.csv", 
+            "tenure2013.csv", 
+            "tenure2014.csv")
 
 #recombine
-tenure <- list("2010" = tenure2010, "2011" = tenure2011, "2012" = tenure2012, "2013" = tenure2013)
+tenure <- list("2010" = tenure2010, 
+               "2011" = tenure2011, 
+               "2012" = tenure2012, 
+               "2013" = tenure2013, 
+               "2014" = tenure2014)
 
 #write out data into csv
 #write.table(tenure$`2010`, file = "tenure.csv", append = TRUE, row.names = FALSE, sep = ",")

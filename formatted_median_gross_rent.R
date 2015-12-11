@@ -15,9 +15,17 @@ mediangrossrent2012 = t(data.frame(estimate(benchmarks2012[[5]])))
 
 mediangrossrent2013 = t(data.frame(estimate(benchmarks2013[[5]])))
 
+#dataframes for 2014
+
+mediangrossrent2014 = t(data.frame(estimate(benchmarks2014[[5]])))
+
 
 #combine all into one list
-mediangrossrent <- list("2010" = mediangrossrent2010, "2011" = mediangrossrent2011, "2012" = mediangrossrent2012, "2013" = mediangrossrent2013)
+mediangrossrent <- list("2010" = mediangrossrent2010, 
+                        "2011" = mediangrossrent2011, 
+                        "2012" = mediangrossrent2012, 
+                        "2013" = mediangrossrent2013, 
+                        "2014" = mediangrossrent2014)
 
 # transform data to include years in first columns
 
@@ -57,11 +65,28 @@ mediangrossrent2013$year<-"2013"
 lengthofcolumns <-length(colnames(mediangrossrent2013))
 mediangrossrent2013<-mediangrossrent2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(mediangrossrent$`2014`, file = "mediangrossrent2014.csv")
+mediangrossrent2014 <- data.frame(read.csv("mediangrossrent2014.csv"))
+headers <- colnames(mediangrossrent2014)
+headers[1] <- "Measures"
+colnames(mediangrossrent2014) <-headers
+mediangrossrent2014$year<-"2014"
+lengthofcolumns <-length(colnames(mediangrossrent2014))
+mediangrossrent2014<-mediangrossrent2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("mediangrossrent2010.csv","mediangrossrent2011.csv", "mediangrossrent2012.csv", "mediangrossrent2013.csv")
+file.remove("mediangrossrent2010.csv",
+            "mediangrossrent2011.csv", 
+            "mediangrossrent2012.csv", 
+            "mediangrossrent2013.csv", 
+            "mediangrossrent2014.csv")
 
 #recombine
-mediangrossrent <- list("2010" = mediangrossrent2010, "2011" = mediangrossrent2011, "2012" = mediangrossrent2012, "2013" = mediangrossrent2013)
+mediangrossrent <- list("2010" = mediangrossrent2010, 
+                        "2011" = mediangrossrent2011, 
+                        "2012" = mediangrossrent2012, 
+                        "2013" = mediangrossrent2013, 
+                        "2014" = mediangrossrent2014)
 
 #write out data into csv
 #write.table(mediangrossrent$`2010`, file = "mediangrossrent.csv", append = TRUE, row.names = FALSE, sep = ",")

@@ -15,9 +15,17 @@ medianincome2012 = t(data.frame(estimate(benchmarks2012[[7]])))
 
 medianincome2013 = t(data.frame(estimate(benchmarks2013[[8]])))
 
+#dataframes for 2014
+
+medianincome2014 = t(data.frame(estimate(benchmarks2014[[8]])))
+
 
 #combine all into one list
-medianincome <- list("2010" = medianincome2010, "2011" = medianincome2011, "2012" = medianincome2012, "2013" = medianincome2013)
+medianincome <- list("2010" = medianincome2010, 
+                     "2011" = medianincome2011, 
+                     "2012" = medianincome2012, 
+                     "2013" = medianincome2013, 
+                     "2014" = medianincome2014)
 
 # transform data to include years in first columns
 
@@ -57,11 +65,28 @@ medianincome2013$year<-"2013"
 lengthofcolumns <-length(colnames(medianincome2013))
 medianincome2013<-medianincome2013[c(lengthofcolumns,1:lengthofcolumns-1)]
 
+write.csv(medianincome$`2014`, file = "medianincome2014.csv")
+medianincome2014 <- data.frame(read.csv("medianincome2014.csv"))
+headers <- colnames(medianincome2014)
+headers[1] <- "Measures"
+colnames(medianincome2014) <-headers
+medianincome2014$year<-"2014"
+lengthofcolumns <-length(colnames(medianincome2014))
+medianincome2014<-medianincome2014[c(lengthofcolumns,1:lengthofcolumns-1)]
+
 #remove intermediate csv files
-file.remove("medianincome2010.csv","medianincome2011.csv", "medianincome2012.csv", "medianincome2013.csv")
+file.remove("medianincome2010.csv",
+            "medianincome2011.csv", 
+            "medianincome2012.csv", 
+            "medianincome2013.csv", 
+            "medianincome2014.csv")
 
 #recombine
-medianincome <- list("2010" = medianincome2010, "2011" = medianincome2011, "2012" = medianincome2012, "2013" = medianincome2013)
+medianincome <- list("2010" = medianincome2010, 
+                     "2011" = medianincome2011, 
+                     "2012" = medianincome2012, 
+                     "2013" = medianincome2013, 
+                     "2014" = medianincome2014)
 
 #write out data into csv
 #write.table(medianincome$`2010`, file = "medianincome.csv", append = TRUE, row.names = FALSE, sep = ",")
