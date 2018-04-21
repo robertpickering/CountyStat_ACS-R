@@ -4,7 +4,7 @@ The following is a basic synopsis of the various files and how they work togethe
 ----------
 
 ##installACS-R.R
-This file must be run before any of the others are.  But, it only needs to be run once as it basically just sets up the environment withing R.
+This file must be run before any of the others are.  But, it only needs to be run once as it basically just sets up the environment within R.
 
 The first thing that the install script does is install the ACS-R package from the CRAN repository.  After that, a few helper packages are installed for use later.
 
